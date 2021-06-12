@@ -14,7 +14,7 @@ public class VaccinationHistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vaccination_history_list_view);
+        setContentView(R.layout.activity_vaccination_history);
 
         vaccinationHistoryListView = findViewById(R.id.vaccinationHistoryListView);
 
