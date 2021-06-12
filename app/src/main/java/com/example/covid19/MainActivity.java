@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void vaccineEvent(View view) {
-        Intent intent = new Intent(this, Vaccination.class);
+        Intent intent = new Intent(this, VaccinationActivity.class);
         startActivity(intent);
     }
 }

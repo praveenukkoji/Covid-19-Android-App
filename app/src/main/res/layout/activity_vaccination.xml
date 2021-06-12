@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Vaccination"
+    tools:context=".VaccinationActivity"
     android:orientation="vertical"
     android:background="@color/app_background_color">
 
@@ -44,7 +44,6 @@
                 android:textStyle="bold"/>
 
             <ImageView
-                android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
