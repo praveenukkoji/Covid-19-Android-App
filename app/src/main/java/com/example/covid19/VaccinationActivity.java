@@ -2,25 +2,28 @@ package com.example.covid19;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.BreakIterator;
+
 public class VaccinationActivity extends AppCompatActivity {
 
-    EditText addhaarnoEditText;
+    EditText addhaarNoEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vaccination);
 
-        addhaarnoEditText = findViewById(R.id.addhaarnoEditText);
+        addhaarNoEditText = findViewById(R.id.addhaarNoEditText);
     }
 
     public void registerEvent(View view) {
-        String number = addhaarnoEditText.getText().toString();
+        String number = addhaarNoEditText.getText().toString();
         if(number.length() < 12)
             // invalid Toast
             Toast.makeText(this, "Enter a valid addhaar number.", Toast.LENGTH_SHORT).show();
@@ -30,6 +33,7 @@ public class VaccinationActivity extends AppCompatActivity {
     }
 
     public void historyEvent(View view) {
-        Toast.makeText(this, "Coming Soon.", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, VaccinationHistoryActivity.class);
+        startActivity(intent);
     }
 }

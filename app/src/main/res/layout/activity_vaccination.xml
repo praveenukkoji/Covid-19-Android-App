@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/white_background_curve"
+        android:background="@drawable/white_curve_background"
         android:padding="30sp">
 
         <LinearLayout
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/vaccination_background" />
+            app:srcCompat="@drawable/vaccination_activity_background" />
 
         <TextView
             android:layout_width="match_parent"
@@ -77,7 +77,7 @@
             android:layout_marginBottom="10sp"/>
 
         <EditText
-            android:id="@+id/addhaarnoEditText"
+            android:id="@+id/addhaarNoEditText"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:background="@drawable/edit_text_background"
