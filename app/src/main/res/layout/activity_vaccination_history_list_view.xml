@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".VaccinationHistoryActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/app_background_color">
 
     <TextView
         android:layout_width="match_parent"
@@ -13,7 +14,6 @@
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="Vaccination History"
-        android:background="@color/app_background_color"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -22,6 +22,10 @@
     <ListView
         android:id="@+id/vaccinationHistoryListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:paddingRight="16sp"
+        android:paddingLeft="16sp"
+        android:overScrollMode="never"
+        android:background="@drawable/white_curve_background"/>
 
 </LinearLayout>

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "177038220750",
-    "project_id": "covid19-2faed",
-    "storage_bucket": "covid19-2faed.appspot.com"
+    "project_number": "579643289609",
+    "project_id": "covid-19-ec1ca",
+    "storage_bucket": "covid-19-ec1ca.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:177038220750:android:93976b7bf839ef7f781f9f",
+        "mobilesdk_app_id": "1:579643289609:android:ad7d934b74e04da361c8d8",
         "android_client_info": {
           "package_name": "com.example.covid19"
         }
       },
       "oauth_client": [
         {
-          "client_id": "177038220750-l837141da8u2vv2dg1nlbodc1vrfbhji.apps.googleusercontent.com",
+          "client_id": "579643289609-i6c4qnnjss2vtbkrsgo9u36uu8fnlhuu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDJqLTggqeDmczOySnGKp3cQskssOdYTV0"
+          "current_key": "AIzaSyCRAcnEDzFUlA0Qu8Q_JpQ-nteV5gN08Wo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "177038220750-l837141da8u2vv2dg1nlbodc1vrfbhji.apps.googleusercontent.com",
+              "client_id": "579643289609-i6c4qnnjss2vtbkrsgo9u36uu8fnlhuu.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
