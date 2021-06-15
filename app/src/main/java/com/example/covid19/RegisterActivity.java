@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    private long pressedTime;
+
     EditText email;
     EditText password;
 
@@ -33,6 +35,18 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.passwordEditText);
 
         firebaseAuth = FirebaseAuth.getInstance();
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (pressedTime + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed();
+            finishAffinity();
+        } else {
+            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
+        }
+        pressedTime = System.currentTimeMillis();
     }
 
     public void registerEvent(View view) {
