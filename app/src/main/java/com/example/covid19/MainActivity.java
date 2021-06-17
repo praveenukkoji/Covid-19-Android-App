@@ -73,4 +73,8 @@ public class MainActivity extends AppCompatActivity {
     // TODO: Chart Type Event
     public void chartTypeEvent(View view) {
     }
+
+    // TODO: Menu Event
+    public void menuEvent(View view) {
+    }
 }

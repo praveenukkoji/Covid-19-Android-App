@@ -12,22 +12,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="10sp">
 
         <ImageView
             android:layout_width="40sp"
-            android:layout_height="match_parent"
-            android:src="@drawable/indian_flag"/>
+            android:layout_height="40sp"
+            android:src="@drawable/menu"
+            android:layout_weight="1"
+            android:onClick="menuEvent"/>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:text="India"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:padding="20sp"/>
+            android:layout_weight="9"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20sp">
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="match_parent"
+                android:src="@drawable/indian_flag"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="India"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:padding="10sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
