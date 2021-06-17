@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -53,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                     });
         }
         else{
-            Toast.makeText(this, "Enter Crendentials Properly.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Enter Credentials Properly.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -61,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(this, "Coming Soon.", Toast.LENGTH_SHORT).show();
     }
 
-    public void creatNewAccountEvent(View view) {
+    public void createNewAccountEvent(View view) {
         Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(intent);
     }

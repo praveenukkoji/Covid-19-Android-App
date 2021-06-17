@@ -8,25 +8,23 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.text.BreakIterator;
-
 public class VaccinationActivity extends AppCompatActivity {
 
-    EditText addhaarNoEditText;
+    EditText aadhaarNoEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vaccination);
 
-        addhaarNoEditText = findViewById(R.id.addhaarNoEditText);
+        aadhaarNoEditText = findViewById(R.id.aadhaarNoEditText);
     }
 
     public void registerEvent(View view) {
-        String number = addhaarNoEditText.getText().toString();
+        String number = aadhaarNoEditText.getText().toString();
         if(number.length() < 12)
             // invalid Toast
-            Toast.makeText(this, "Enter a valid addhaar number.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Enter a valid aadhaar number.", Toast.LENGTH_SHORT).show();
         else
             // successful register
             Toast.makeText(this, "Registered Successfully.", Toast.LENGTH_SHORT).show();

@@ -1,7 +1,5 @@
 package com.example.covid19;
 
-import android.media.Image;
-
 public class VaccinationHistoryClass {
 
     int injectionImage;

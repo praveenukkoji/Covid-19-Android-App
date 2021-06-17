@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:text="Create new account ?"
         android:padding="10sp"
-        android:onClick="creatNewAccountEvent"/>
+        android:onClick="createNewAccountEvent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
