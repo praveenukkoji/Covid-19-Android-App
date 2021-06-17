@@ -2,11 +2,13 @@ package com.example.covid19;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -48,10 +50,23 @@ public class MainActivity extends AppCompatActivity {
         data.add(new BarEntry(20, 5));
 
         BarDataSet barDataSet = new BarDataSet(data, "");
+        barDataSet.setDrawValues(false);
 
         BarData barData = new BarData(barDataSet);
 
         barChart.setData(barData);
+
+        barChart.getDescription().setEnabled(false);
+        barChart.getLegend().setEnabled(false);
+
+        barChart.getXAxis().setEnabled(false);
+        barChart.getXAxis().setDrawAxisLine(false);
+        barChart.getXAxis().setDrawGridLines(false);
+        barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+
+        barChart.getAxisRight().setEnabled(false);
+
+        barChart.getAxisLeft().setDrawAxisLine(false);
     }
 
     @Override
