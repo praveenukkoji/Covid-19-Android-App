@@ -2,9 +2,11 @@ package com.example.covid19;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -15,16 +17,21 @@ import com.github.mikephil.charting.data.BarEntry;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     BarChart barChart;
+
+    Spinner chartTypeSpinner;
+
     private long pressedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Bar Chart
         barChart = findViewById(R.id.barChart);
 
         ArrayList<BarEntry> data = new ArrayList<>();
@@ -67,6 +74,25 @@ public class MainActivity extends AppCompatActivity {
         barChart.getAxisRight().setEnabled(false);
 
         barChart.getAxisLeft().setDrawAxisLine(false);
+
+        // Spinner
+        chartTypeSpinner = findViewById(R.id.chartTypeSpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.chartType, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        chartTypeSpinner.setAdapter(adapter);
+        chartTypeSpinner.setOnItemSelectedListener(this);
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String item = parent.getItemAtPosition(position).toString();
+        Toast.makeText(getApplicationContext(), item, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
     @Override
@@ -87,9 +113,5 @@ public class MainActivity extends AppCompatActivity {
 
     // TODO: Chart Type Event
     public void chartTypeEvent(View view) {
-    }
-
-    // TODO: Menu Event
-    public void menuEvent(View view) {
     }
 }
