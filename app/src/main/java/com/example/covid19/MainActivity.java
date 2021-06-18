@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+// bar chart
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -19,10 +20,13 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    // bar chart
     BarChart barChart;
 
+    // spinner
     Spinner chartTypeSpinner;
 
+    // exit app
     private long pressedTime;
 
     @Override
@@ -31,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Bar Chart
+        // bar chart
         barChart = findViewById(R.id.barChart);
 
         ArrayList<BarEntry> data = new ArrayList<>();
@@ -75,15 +79,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         barChart.getAxisLeft().setDrawAxisLine(false);
 
-        // Spinner
+        // spinner
         chartTypeSpinner = findViewById(R.id.chartTypeSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.chartType, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         chartTypeSpinner.setAdapter(adapter);
         chartTypeSpinner.setOnItemSelectedListener(this);
-
     }
 
+    // spinner
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String item = parent.getItemAtPosition(position).toString();
@@ -95,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    // exit app
     @Override
     public void onBackPressed() {
 
@@ -107,11 +112,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         pressedTime = System.currentTimeMillis();
     }
 
-    // TODO: State List Event
+    // state event
     public void stateListEvent(View view) {
     }
 
-    // TODO: Chart Type Event
+    // chart type event
     public void chartTypeEvent(View view) {
     }
 }

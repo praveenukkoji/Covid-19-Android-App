@@ -14,12 +14,14 @@ public class VaccinationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vaccination);
 
         aadhaarNoEditText = findViewById(R.id.aadhaarNoEditText);
     }
 
+    // register event
     public void registerEvent(View view) {
         String number = aadhaarNoEditText.getText().toString();
         if(number.length() < 12)
@@ -30,6 +32,7 @@ public class VaccinationActivity extends AppCompatActivity {
             Toast.makeText(this, "Registered Successfully.", Toast.LENGTH_SHORT).show();
     }
 
+    // history event
     public void historyEvent(View view) {
         Intent intent = new Intent(this, VaccinationHistoryActivity.class);
         startActivity(intent);

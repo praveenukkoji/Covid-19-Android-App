@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+// firebase
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -16,24 +17,29 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    // exit app
     private long pressedTime;
 
     EditText email;
     EditText password;
 
+    // firebase
     private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
         email = findViewById(R.id.emailEditText);
         password = findViewById(R.id.passwordEditText);
 
+        // firebase instance
         firebaseAuth = FirebaseAuth.getInstance();
     }
 
+    // exit app
     @Override
     public void onBackPressed() {
 
@@ -46,10 +52,14 @@ public class RegisterActivity extends AppCompatActivity {
         pressedTime = System.currentTimeMillis();
     }
 
+    // register event
     public void registerEvent(View view) {
         String getEmail = email.getText().toString();
         String getPassword = password.getText().toString();
+
         if(getEmail.length() != 0 && getPassword.length() != 0)
+
+            // create new user with email and password
             firebaseAuth.createUserWithEmailAndPassword(getEmail, getPassword)
                     .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
@@ -69,6 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+    // already have account event
     public void alreadyHaveAccountEvent(View view) {
         Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivity(intent);
