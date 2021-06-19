@@ -7,6 +7,7 @@ public class VaccinationHistoryClass {
     String registeredDate;
 
     public VaccinationHistoryClass(int injectionImage, String aadhaarCardNo, String registeredDate) {
+
         this.injectionImage = injectionImage;
         this.aadhaarCardNo = aadhaarCardNo;
         this.registeredDate = registeredDate;

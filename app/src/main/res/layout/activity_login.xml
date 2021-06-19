@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="16sp"
         android:layout_marginBottom="16sp"
         android:text="Login"
         android:textSize="40sp"
@@ -34,9 +34,9 @@
         android:hint="Email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
-        android:padding="15sp"
-        android:textSize="15sp"
-        android:layout_marginBottom="20sp"/>
+        android:padding="16sp"
+        android:textSize="14sp"
+        android:layout_marginBottom="16sp"/>
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -46,22 +46,22 @@
         android:hint="Password"
         android:importantForAutofill="no"
         android:inputType="textPassword"
-        android:padding="15sp"
-        android:textSize="15sp"
-        android:layout_marginBottom="10sp"/>
+        android:padding="16sp"
+        android:textSize="14sp"
+        android:layout_marginBottom="16sp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Forgot Password ?"
-        android:padding="10sp"
+        android:padding="8sp"
         android:onClick="forgotPasswordEvent"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create new account ?"
-        android:padding="10sp"
+        android:padding="8sp"
         android:onClick="createNewAccountEvent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout

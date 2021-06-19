@@ -20,6 +20,8 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+
+//navigation
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     // spinner
     Spinner chartTypeSpinner;
+    Spinner stateSpinner;
 
     // exit app
     private long pressedTime;
@@ -91,22 +94,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         // spinner
         chartTypeSpinner = findViewById(R.id.chartTypeSpinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.chartType, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        chartTypeSpinner.setAdapter(adapter);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.chartType, android.R.layout.simple_spinner_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        chartTypeSpinner.setAdapter(adapter1);
         chartTypeSpinner.setOnItemSelectedListener(this);
+
+        stateSpinner = findViewById(R.id.stateSpinner);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.states, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        stateSpinner.setAdapter(adapter2);
+        stateSpinner.setOnItemSelectedListener(this);
 
         // navigation
         drawerLayout = findViewById(R.id.drawerLayout);
 
         navigationView = findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-
                 Intent intent;
-
                 switch (id) {
                     case R.id.home:
                         intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -132,13 +140,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     // spinner
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
         String item = parent.getItemAtPosition(position).toString();
         Toast.makeText(getApplicationContext(), item, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
 
     // exit app
@@ -164,6 +172,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     // navigation
     public void menuEvent(View view) {
+
         drawerLayout.openDrawer(GravityCompat.START);
     }
 }

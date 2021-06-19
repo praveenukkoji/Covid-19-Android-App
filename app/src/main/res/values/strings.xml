@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">Covid19</string>
 
+    <string-array name="states">
+        <item>All States</item>
+        <item>Karnataka</item>
+        <item>Punjab</item>
+        <item>Delhi</item>
+        <item>Maharashtra</item>
+        <item>Tamil Nadu</item>
+        <item>Andra Pradesh</item>
+        <item>Madhya Pradesh</item>
+        <item>Gujarat</item>
+    </string-array>
+
     <string-array name="chartType">
         <item>Active</item>
         <item>Confirmed</item>

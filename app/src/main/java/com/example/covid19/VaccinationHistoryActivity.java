@@ -40,6 +40,5 @@ public class VaccinationHistoryActivity extends AppCompatActivity {
 
         VaccinationHistoryAdapterClass vaccinationHistoryAdapterClass = new VaccinationHistoryAdapterClass(this, R.layout.activity_vaccination_history_list_row,vaccinationHistoryClassArrayList);
         vaccinationHistoryListView.setAdapter(vaccinationHistoryAdapterClass);
-
     }
 }

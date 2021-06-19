@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:padding="10sp">
+            android:padding="16sp">
 
             <ImageView
                 android:layout_width="40sp"
@@ -26,14 +26,14 @@
                 android:layout_weight="1"
                 android:onClick="menuEvent"
                 android:src="@drawable/menu"
-                app:tint="@color/black" />
+                app:tint="@color/black"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="9"
                 android:orientation="horizontal"
-                android:layout_marginLeft="20sp">
+                android:layout_marginLeft="16sp">
 
                 <ImageView
                     android:layout_width="40sp"
@@ -49,8 +49,7 @@
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     android:textStyle="bold"
-                    android:padding="10sp"
-                    android:gravity="center"/>
+                    android:layout_marginLeft="16sp"/>
 
             </LinearLayout>
 
@@ -67,30 +66,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="20sp"
+                android:layout_marginBottom="16sp"
                 android:background="@drawable/edit_text_background"
                 android:onClick="stateListEvent"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true">
 
-                <TextView
+                <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="All States"
-                    android:padding="15sp"
-                    android:textSize="15sp"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_weight="9"
-                    app:srcCompat="@drawable/right_arrow"
-                    tools:ignore="VectorDrawableCompat" />
+                    android:id="@+id/stateSpinner"
+                    android:textAlignment="center"
+                    android:padding="8sp"/>
 
             </LinearLayout>
 
@@ -98,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="20sp"
+                android:layout_marginBottom="16sp"
                 android:background="@drawable/edit_text_background"
                 android:onClick="chartTypeEvent"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -109,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/chartTypeSpinner"
                     android:textAlignment="center"
-                    android:padding="10sp"/>
+                    android:padding="8sp"/>
 
             </LinearLayout>
 
@@ -118,9 +105,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="300sp"
                 android:layout_weight="1"
-                android:padding="10sp"
+                android:padding="16sp"
                 android:background="@drawable/custom_border"
-                android:layout_marginBottom="20sp"/>
+                android:layout_marginBottom="16sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

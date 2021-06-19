@@ -22,7 +22,8 @@ public class VaccinationActivity extends AppCompatActivity {
     }
 
     // register event
-    public void registerEvent(View view) {
+    public void registerVaccinationEvent(View view) {
+
         String number = aadhaarNoEditText.getText().toString();
         if(number.length() < 12)
             // invalid Toast
@@ -34,6 +35,7 @@ public class VaccinationActivity extends AppCompatActivity {
 
     // history event
     public void historyEvent(View view) {
+
         Intent intent = new Intent(this, VaccinationHistoryActivity.class);
         startActivity(intent);
     }

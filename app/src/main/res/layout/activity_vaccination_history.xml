@@ -11,7 +11,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="Vaccination History"
         android:textColor="@color/white"
@@ -26,6 +25,7 @@
         android:paddingRight="16sp"
         android:paddingLeft="16sp"
         android:overScrollMode="never"
+        android:scrollbars="none"
         android:background="@drawable/white_curve_background"/>
 
 </LinearLayout>

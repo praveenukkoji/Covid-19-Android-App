@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
 
     // login event
     public void loginEvent(View view) {
+
         String getEmail = email.getText().toString();
         String getPassword = password.getText().toString();
 
@@ -66,11 +67,13 @@ public class LoginActivity extends AppCompatActivity {
 
     // forgot password event
     public void forgotPasswordEvent(View view) {
+
         Toast.makeText(this, "Coming Soon.", Toast.LENGTH_SHORT).show();
     }
 
     // create new account event
     public void createNewAccountEvent(View view) {
+
         Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(intent);
     }

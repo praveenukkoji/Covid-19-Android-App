@@ -54,6 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     // register event
     public void registerEvent(View view) {
+
         String getEmail = email.getText().toString();
         String getPassword = password.getText().toString();
 
@@ -81,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     // already have account event
     public void alreadyHaveAccountEvent(View view) {
+
         Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivity(intent);
     }
