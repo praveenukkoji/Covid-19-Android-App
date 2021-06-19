@@ -57,21 +57,41 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         data.add(new BarEntry(3, 3));
         data.add(new BarEntry(4, 4));
         data.add(new BarEntry(5, 5));
-        data.add(new BarEntry(6, 1));
-        data.add(new BarEntry(7, 2));
-        data.add(new BarEntry(8, 3));
-        data.add(new BarEntry(9, 4));
-        data.add(new BarEntry(10, 5));
-        data.add(new BarEntry(11, 1));
-        data.add(new BarEntry(12, 2));
-        data.add(new BarEntry(13, 3));
-        data.add(new BarEntry(14, 4));
-        data.add(new BarEntry(15, 5));
-        data.add(new BarEntry(16, 1));
-        data.add(new BarEntry(17, 2));
-        data.add(new BarEntry(18, 3));
-        data.add(new BarEntry(19, 4));
-        data.add(new BarEntry(20, 5));
+        data.add(new BarEntry(6, 6));
+        data.add(new BarEntry(7, 7));
+        data.add(new BarEntry(8, 8));
+        data.add(new BarEntry(9, 9));
+        data.add(new BarEntry(10, 10));
+        data.add(new BarEntry(11, 11));
+        data.add(new BarEntry(12, 12));
+        data.add(new BarEntry(13, 12));
+        data.add(new BarEntry(14, 10));
+        data.add(new BarEntry(15, 9));
+        data.add(new BarEntry(16, 8));
+        data.add(new BarEntry(17, 7));
+        data.add(new BarEntry(18, 6));
+        data.add(new BarEntry(19, 9));
+        data.add(new BarEntry(20, 10));
+        data.add(new BarEntry(21, 11));
+        data.add(new BarEntry(22, 12));
+        data.add(new BarEntry(23, 11));
+        data.add(new BarEntry(24, 10));
+        data.add(new BarEntry(25, 9));
+        data.add(new BarEntry(26, 8));
+        data.add(new BarEntry(27, 6));
+        data.add(new BarEntry(28, 5));
+        data.add(new BarEntry(29, 7));
+        data.add(new BarEntry(30, 8));
+        data.add(new BarEntry(31, 9));
+        data.add(new BarEntry(32, 10));
+        data.add(new BarEntry(33, 8));
+        data.add(new BarEntry(34, 7));
+        data.add(new BarEntry(35, 6));
+        data.add(new BarEntry(36, 5));
+        data.add(new BarEntry(37, 4));
+        data.add(new BarEntry(38, 3));
+        data.add(new BarEntry(39, 2));
+        data.add(new BarEntry(40, 1));
 
         BarDataSet barDataSet = new BarDataSet(data, "");
         barDataSet.setDrawValues(false);
@@ -124,9 +144,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         intent = new Intent(getApplicationContext(), VaccinationActivity.class);
                         startActivity(intent);
                         break;
-                    case R.id.prevention:
+                    case R.id.vaccinationHistory:
                         intent = new Intent(getApplicationContext(), VaccinationHistoryActivity.class);
                         startActivity(intent);
+                        break;
+                    case R.id.prevention:
+                        Toast.makeText(getApplicationContext(), "Coming Soon.", Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         break;
@@ -141,8 +164,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-        String item = parent.getItemAtPosition(position).toString();
-        Toast.makeText(getApplicationContext(), item, Toast.LENGTH_SHORT).show();
+//        String item = parent.getItemAtPosition(position).toString();
+//        Toast.makeText(getApplicationContext(), item, Toast.LENGTH_SHORT).show();
     }
 
     @Override

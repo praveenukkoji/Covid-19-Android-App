@@ -9,6 +9,10 @@
         android:icon="@drawable/vaccination"
         android:title="Vaccination"/>
     <item
+        android:id="@+id/vaccinationHistory"
+        android:icon="@drawable/history"
+        android:title="Vaccination History"/>
+    <item
         android:id="@+id/prevention"
         android:icon="@drawable/prevention"
         android:title="Prevention"/>

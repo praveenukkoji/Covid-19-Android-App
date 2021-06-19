@@ -27,10 +27,10 @@ public class VaccinationActivity extends AppCompatActivity {
         String number = aadhaarNoEditText.getText().toString();
         if(number.length() < 12)
             // invalid Toast
-            Toast.makeText(this, "Enter a valid aadhaar number.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Enter a valid aadhaar number.", Toast.LENGTH_SHORT).show();
         else
             // successful register
-            Toast.makeText(this, "Registered Successfully.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Registered Successfully.", Toast.LENGTH_SHORT).show();
     }
 
     // history event

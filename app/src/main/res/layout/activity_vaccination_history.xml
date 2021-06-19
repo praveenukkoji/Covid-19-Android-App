@@ -16,7 +16,7 @@
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:padding="20sp"/>
+        android:padding="16sp"/>
 
     <ListView
         android:id="@+id/vaccinationHistoryListView"
@@ -26,6 +26,7 @@
         android:paddingLeft="16sp"
         android:overScrollMode="never"
         android:scrollbars="none"
+        android:listSelector="@android:color/transparent"
         android:background="@drawable/white_curve_background"/>
 
 </LinearLayout>

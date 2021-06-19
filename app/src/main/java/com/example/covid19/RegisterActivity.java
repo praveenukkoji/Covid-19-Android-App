@@ -72,11 +72,11 @@ public class RegisterActivity extends AppCompatActivity {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(RegisterActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         else{
-            Toast.makeText(this, "Enter Credentials Properly.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Enter Credentials Properly.", Toast.LENGTH_SHORT).show();
         }
     }
 

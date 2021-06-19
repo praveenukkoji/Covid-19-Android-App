@@ -56,19 +56,19 @@ public class LoginActivity extends AppCompatActivity {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(LoginActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         }
         else{
-            Toast.makeText(this, "Enter Credentials Properly.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Enter Credentials Properly.", Toast.LENGTH_SHORT).show();
         }
     }
 
     // forgot password event
     public void forgotPasswordEvent(View view) {
 
-        Toast.makeText(this, "Coming Soon.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Coming Soon.", Toast.LENGTH_SHORT).show();
     }
 
     // create new account event
