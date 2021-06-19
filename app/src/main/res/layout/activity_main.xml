@@ -1,253 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:background="@color/app_background_color">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="10sp">
-
-        <ImageView
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            android:src="@drawable/menu"
-            android:layout_weight="1"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="9"
-            android:orientation="horizontal"
-            android:layout_marginLeft="20sp">
-
-            <ImageView
-                android:layout_width="40sp"
-                android:layout_height="match_parent"
-                android:src="@drawable/indian_flag"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:text="India"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:padding="10sp"
-                android:gravity="center"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/white_curve_background"
-        android:padding="16sp">
+        android:background="@color/app_background_color">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="20sp"
-            android:background="@drawable/edit_text_background"
-            android:onClick="stateListEvent"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="All States"
-                android:padding="15sp"
-                android:textSize="15sp"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:textStyle="bold"/>
+            android:gravity="center"
+            android:padding="10sp">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="9"
-                app:srcCompat="@drawable/right_arrow"
-                tools:ignore="VectorDrawableCompat" />
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_weight="1"
+                android:onClick="menuEvent"
+                android:src="@drawable/menu"
+                app:tint="@color/black" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20sp"
-            android:background="@drawable/edit_text_background"
-            android:onClick="chartTypeEvent"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true">
-
-            <Spinner
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/chartTypeSpinner"
-                android:textAlignment="center"
-                android:padding="10sp"/>
+                android:layout_weight="9"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20sp">
+
+                <ImageView
+                    android:layout_width="40sp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/indian_flag"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="India"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:padding="10sp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/barChart"
-            android:layout_width="match_parent"
-            android:layout_height="300sp"
-            android:layout_weight="1"
-            android:padding="10sp"
-            android:background="@drawable/custom_border"
-            android:layout_marginBottom="20sp"/>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/white_curve_background"
+            android:padding="16sp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="16sp">
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/edit_text_background"
+                android:onClick="stateListEvent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:text="All States"
+                    android:padding="15sp"
+                    android:textSize="15sp"
+                    android:gravity="center"
                     android:layout_weight="1"
-                    android:layout_marginRight="10sp"
-                    android:background="@drawable/coloured_curve_background">
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="Confirmed"
-                        android:textColor="@color/white"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="2.33L"
-                        android:textColor="@color/white"/>
-
-                </LinearLayout>
-
-                <LinearLayout
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:background="@drawable/coloured_curve_background">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="Deaths"
-                        android:textColor="@color/white"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="2.33L"
-                        android:textColor="@color/white"/>
-
-                </LinearLayout>
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="9"
+                    app:srcCompat="@drawable/right_arrow"
+                    tools:ignore="VectorDrawableCompat" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/edit_text_background"
+                android:onClick="chartTypeEvent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/chartTypeSpinner"
+                    android:textAlignment="center"
+                    android:padding="10sp"/>
+
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChart"
+                android:layout_width="match_parent"
+                android:layout_height="300sp"
+                android:layout_weight="1"
+                android:padding="10sp"
+                android:background="@drawable/custom_border"
+                android:layout_marginBottom="20sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginRight="10sp"
-                    android:layout_weight="1"
-                    android:background="@drawable/coloured_curve_background">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16sp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="Recovered"
-                        android:textColor="@color/white"/>
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginRight="10sp"
+                        android:background="@drawable/coloured_curve_background">
 
-                    <TextView
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10sp"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="Confirmed"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10sp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="2.33L"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="2.33L"
-                        android:textColor="@color/white"/>
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/coloured_curve_background">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10sp"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="Deaths"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10sp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="2.33L"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:background="@drawable/coloured_curve_background">
+                    android:orientation="horizontal">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="Active"
-                        android:textColor="@color/white"/>
+                        android:orientation="vertical"
+                        android:layout_marginRight="10sp"
+                        android:layout_weight="1"
+                        android:background="@drawable/coloured_curve_background">
 
-                    <TextView
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10sp"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="Recovered"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10sp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="2.33L"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="2.33L"
-                        android:textColor="@color/white"/>
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/coloured_curve_background">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10sp"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="Active"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10sp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="2.33L"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -257,4 +266,12 @@
 
     </LinearLayout>
 
-</LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/navigation_menu"
+        app:headerLayout="@layout/navigation_header"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

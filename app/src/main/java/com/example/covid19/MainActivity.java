@@ -1,8 +1,13 @@
 package com.example.covid19;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +20,7 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
@@ -28,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     // exit app
     private long pressedTime;
+
+    // navigation
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +95,38 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         chartTypeSpinner.setAdapter(adapter);
         chartTypeSpinner.setOnItemSelectedListener(this);
+
+        // navigation
+        drawerLayout = findViewById(R.id.drawerLayout);
+
+        navigationView = findViewById(R.id.navigationView);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                Intent intent;
+
+                switch (id) {
+                    case R.id.home:
+                        intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.vaccination:
+                        intent = new Intent(getApplicationContext(), VaccinationActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.prevention:
+                        intent = new Intent(getApplicationContext(), VaccinationHistoryActivity.class);
+                        startActivity(intent);
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
+
     }
 
     // spinner
@@ -118,5 +160,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     // chart type event
     public void chartTypeEvent(View view) {
+    }
+
+    // navigation
+    public void menuEvent(View view) {
+        drawerLayout.openDrawer(GravityCompat.START);
     }
 }
