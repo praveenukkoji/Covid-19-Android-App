@@ -136,10 +136,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 int id = item.getItemId();
                 Intent intent;
                 switch (id) {
-                    case R.id.home:
-                        intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
-                        break;
                     case R.id.vaccination:
                         intent = new Intent(getApplicationContext(), VaccinationActivity.class);
                         startActivity(intent);
@@ -149,7 +145,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         startActivity(intent);
                         break;
                     case R.id.prevention:
-                        Toast.makeText(getApplicationContext(), "Coming Soon.", Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getApplicationContext(), PreventionActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.symptoms:
+                        Toast.makeText(getApplicationContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         break;
@@ -176,13 +176,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onBackPressed() {
 
-        if (pressedTime + 2000 > System.currentTimeMillis()) {
-            super.onBackPressed();
-            finishAffinity();
-        } else {
-            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
+        if (this.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            this.drawerLayout.closeDrawer(GravityCompat.START);
         }
-        pressedTime = System.currentTimeMillis();
+        else{
+            if (pressedTime + 2000 > System.currentTimeMillis()) {
+                super.onBackPressed();
+                finishAffinity();
+            } else {
+                Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
+            }
+            pressedTime = System.currentTimeMillis();
+        }
     }
 
     // state event
