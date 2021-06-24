@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/app_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19">
-        <activity android:name=".SymptomsActivity"></activity>
+        <activity android:name=".SymptomsActivity" />
         <activity android:name=".PreventionActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
