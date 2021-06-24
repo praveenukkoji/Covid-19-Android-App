@@ -1,10 +1,10 @@
 package com.example.covid19;
 
-public class PreventionCardClass {
+public class SwipeCardClass {
     private int image;
     private String desc;
 
-    public PreventionCardClass(int image, String desc) {
+    public SwipeCardClass(int image, String desc) {
         this.image = image;
         this.desc = desc;
     }

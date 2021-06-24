@@ -149,7 +149,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         startActivity(intent);
                         break;
                     case R.id.symptoms:
-                        Toast.makeText(getApplicationContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getApplicationContext(), SymptomsActivity.class);
+                        startActivity(intent);
                         break;
                     default:
                         break;

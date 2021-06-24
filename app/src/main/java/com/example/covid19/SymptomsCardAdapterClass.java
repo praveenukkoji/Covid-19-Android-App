@@ -11,18 +11,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class PreventionCardAdapterClass extends RecyclerView.Adapter<PreventionCardAdapterClass.MyViewHolder> {
+public class SymptomsCardAdapterClass extends RecyclerView.Adapter<SymptomsCardAdapterClass.MyViewHolder> {
 
     ArrayList<SwipeCardClass> list;
 
-    public PreventionCardAdapterClass(ArrayList<SwipeCardClass> list) {
+    public SymptomsCardAdapterClass(ArrayList<SwipeCardClass> list) {
         this.list = list;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_prevention_card, parent, false));
+        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_symptoms_card, parent, false));
     }
 
     @Override

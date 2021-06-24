@@ -11,7 +11,7 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-public class PreventionActivity extends AppCompatActivity {
+public class SymptomsActivity extends AppCompatActivity {
 
     ViewPager2 viewPager2;
 
@@ -19,20 +19,21 @@ public class PreventionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prevention);
+        setContentView(R.layout.activity_symptoms);
 
         viewPager2 = findViewById(R.id.viewPager2);
 
         ArrayList<SwipeCardClass> swipeCardClasses = new ArrayList<>();
 
-        swipeCardClasses.add(new SwipeCardClass(R.drawable.wear_mask, "Wear Mask"));
-        swipeCardClasses.add(new SwipeCardClass(R.drawable.boost_immunity, "Boost Immunity"));
-        swipeCardClasses.add(new SwipeCardClass(R.drawable.wash_hand, "Wash Hand"));
-        swipeCardClasses.add(new SwipeCardClass(R.drawable.stay_home, "Stay Home"));
-        swipeCardClasses.add(new SwipeCardClass(R.drawable.social_distancing, "Social Distancing"));
+        swipeCardClasses.add(new SwipeCardClass(R.drawable.cough, "Cough"));
+        swipeCardClasses.add(new SwipeCardClass(R.drawable.chest_pain, "Chest Pain"));
+        swipeCardClasses.add(new SwipeCardClass(R.drawable.fatigue, "Fatigue"));
+        swipeCardClasses.add(new SwipeCardClass(R.drawable.fever_chills, "Fever/Chills"));
+        swipeCardClasses.add(new SwipeCardClass(R.drawable.inability_to_stay_awake, "Inability to Stay Awake"));
+        swipeCardClasses.add(new SwipeCardClass(R.drawable.loss_of_smell_and_test, "Loss of Smell and Taste"));
 
-        PreventionCardAdapterClass preventionCardAdapterClass = new PreventionCardAdapterClass(swipeCardClasses);
-        viewPager2.setAdapter(preventionCardAdapterClass);
+        SymptomsCardAdapterClass symptomsCardAdapterClass = new SymptomsCardAdapterClass(swipeCardClasses);
+        viewPager2.setAdapter(symptomsCardAdapterClass);
 
         View child = viewPager2.getChildAt(0);
         if (child instanceof RecyclerView) {
