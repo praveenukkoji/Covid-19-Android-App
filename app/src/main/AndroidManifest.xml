@@ -12,16 +12,16 @@
         <activity android:name=".SymptomsActivity" />
         <activity android:name=".PreventionActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".VaccinationHistoryActivity" />
-        <activity android:name=".VaccinationActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".VaccinationHistoryActivity" />
+        <activity android:name=".VaccinationActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
