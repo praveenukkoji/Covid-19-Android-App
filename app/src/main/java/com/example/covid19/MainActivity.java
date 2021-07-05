@@ -12,7 +12,19 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+
+// volley
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 // bar chart
 import com.github.mikephil.charting.charts.BarChart;
@@ -27,6 +39,10 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+    // volley
+    private RequestQueue mQueue;
+    TextView confirmed, deaths, recovered, active;
 
     // bar chart
     BarChart barChart;
@@ -47,6 +63,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // volley
+        mQueue = Volley.newRequestQueue(this);
+        confirmed = findViewById(R.id.Confirmed);
+        deaths = findViewById(R.id.Deaths);
+        recovered = findViewById(R.id.Recovered);
+        active = findViewById(R.id.Active);
 
         // bar chart
         barChart = findViewById(R.id.barChart);
@@ -140,10 +163,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         intent = new Intent(getApplicationContext(), VaccinationActivity.class);
                         startActivity(intent);
                         break;
-                    case R.id.vaccinationHistory:
-                        intent = new Intent(getApplicationContext(), VaccinationHistoryActivity.class);
-                        startActivity(intent);
-                        break;
                     case R.id.prevention:
                         intent = new Intent(getApplicationContext(), PreventionActivity.class);
                         startActivity(intent);
@@ -161,12 +180,54 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    // volley state parser
+    private void jsonParse(String state) {
+        String url = "https://api.covid19india.org/data.json";
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray jsonArray = response.getJSONArray("statewise");
+                            JSONObject jsonObject = null;
+                            if(state.equals("All States")) {
+                                jsonObject = jsonArray.getJSONObject(0);
+                            }
+                            else {
+                                for(int i=1;i<jsonArray.length();i++){
+                                    jsonObject = jsonArray.getJSONObject(i);
+                                    if(state.equals(jsonObject.getString("state"))){
+                                        break;
+                                    }
+                                }
+                            }
+                            assert jsonObject != null;
+                            confirmed.setText(jsonObject.getString("confirmed"));
+                            deaths.setText(jsonObject.getString("deaths"));
+                            recovered.setText(jsonObject.getString("recovered"));
+                            active.setText(jsonObject.getString("active"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        mQueue.add(request);
+    }
+
     // spinner
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-//        String item = parent.getItemAtPosition(position).toString();
-//        Toast.makeText(getApplicationContext(), item, Toast.LENGTH_SHORT).show();
+//        String chartType = chartTypeSpinner.getSelectedItem().toString();
+//        jsonParseBarChart(chartType);
+
+        String state = stateSpinner.getSelectedItem().toString();
+        jsonParse(state);
     }
 
     @Override
@@ -190,15 +251,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             pressedTime = System.currentTimeMillis();
         }
     }
-
-    // state event
-    public void stateListEvent(View view) {
-    }
-
-    // chart type event
-    public void chartTypeEvent(View view) {
-    }
-
     // navigation
     public void menuEvent(View view) {
 

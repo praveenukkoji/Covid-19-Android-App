@@ -9,19 +9,26 @@
         android:roundIcon="@mipmap/app_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19">
-        <activity android:name=".SymptomsActivity" />
-        <activity android:name=".PreventionActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".SymptomsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PreventionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RegisterActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".VaccinationHistoryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".VaccinationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".VaccinationHistoryActivity" />
-        <activity android:name=".VaccinationActivity" />
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
