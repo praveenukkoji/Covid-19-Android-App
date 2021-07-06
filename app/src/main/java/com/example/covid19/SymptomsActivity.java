@@ -52,4 +52,9 @@ public class SymptomsActivity extends AppCompatActivity {
 
         viewPager2.setPageTransformer(transformer);
     }
+
+    // back button
+    public void backBtn(View view) {
+        onBackPressed();
+    }
 }

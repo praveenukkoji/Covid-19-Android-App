@@ -39,4 +39,9 @@ public class VaccinationActivity extends AppCompatActivity {
         Intent intent = new Intent(this, VaccinationHistoryActivity.class);
         startActivity(intent);
     }
+
+    // back button
+    public void backBtn(View view) {
+        onBackPressed();
+    }
 }
