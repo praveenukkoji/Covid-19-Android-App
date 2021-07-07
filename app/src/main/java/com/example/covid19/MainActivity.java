@@ -159,9 +159,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 int id = item.getItemId();
                 Intent intent;
                 switch (id) {
+                    case R.id.vaccination_center:
+                        intent = new Intent(getApplicationContext(), VaccinationCenterActivity.class);
+                        startActivity(intent);
+                        break;
                     case R.id.vaccination:
                         intent = new Intent(getApplicationContext(), VaccinationActivity.class);
                         startActivity(intent);
+                        break;
+                    case R.id.vaccination_history:
+                        intent = new Intent(getApplicationContext(), VaccinationHistoryActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.vaccination_certificate:
+                        Toast.makeText(getApplicationContext(), "Coming Soon.", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.prevention:
                         intent = new Intent(getApplicationContext(), PreventionActivity.class);

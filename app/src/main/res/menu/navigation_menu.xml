@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/vaccination_center"
+        android:icon="@drawable/vaccination_center"
+        android:title="Vaccination Center"/>
+    <item
         android:id="@+id/vaccination"
         android:icon="@drawable/vaccination"
         android:title="Vaccination"/>
+    <item
+        android:id="@+id/vaccination_history"
+        android:icon="@drawable/history"
+        android:title="Vaccination history"/>
+    <item
+        android:id="@+id/vaccination_certificate"
+        android:icon="@drawable/certificate"
+        android:title="Vaccination Certificate"/>
     <item
         android:id="@+id/prevention"
         android:icon="@drawable/prevention"
