@@ -24,4 +24,8 @@
         android:id="@+id/symptoms"
         android:icon="@drawable/symptoms"
         android:title="Symptoms"/>
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:title="Log Out"/>
 </menu>

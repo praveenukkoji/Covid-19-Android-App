@@ -25,6 +25,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 // bar chart
 import com.github.mikephil.charting.charts.BarChart;
@@ -35,6 +36,8 @@ import com.github.mikephil.charting.data.BarEntry;
 
 //navigation
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -172,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         startActivity(intent);
                         break;
                     case R.id.vaccination_certificate:
-                        Toast.makeText(getApplicationContext(), "Coming Soon.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Vaccination Certificate Coming Soon.", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.prevention:
                         intent = new Intent(getApplicationContext(), PreventionActivity.class);
@@ -180,6 +183,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         break;
                     case R.id.symptoms:
                         intent = new Intent(getApplicationContext(), SymptomsActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.logout:
+                        FirebaseAuth.getInstance().signOut();
+                        intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
                         break;
                     default:
@@ -265,6 +273,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     // navigation
     public void menuEvent(View view) {
 
+        TextView email;
+        email = findViewById(R.id.emailText);
+        String emailText = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        email.setText(emailText);
         drawerLayout.openDrawer(GravityCompat.START);
     }
 }
