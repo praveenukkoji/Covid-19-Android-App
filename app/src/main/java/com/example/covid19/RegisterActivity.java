@@ -10,10 +10,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 // firebase
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -25,6 +28,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     // firebase
     private FirebaseAuth firebaseAuth;
+
+    // user
+    UserClass user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,15 +64,27 @@ public class RegisterActivity extends AppCompatActivity {
         String getEmail = email.getText().toString();
         String getPassword = password.getText().toString();
 
-        if(getEmail.length() != 0 && getPassword.length() != 0)
+        if(getEmail.length() != 0 && getPassword.length() != 0) {
+
+            user = new UserClass(getEmail, getPassword);
 
             // create new user with email and password
             firebaseAuth.createUserWithEmailAndPassword(getEmail, getPassword)
-                    .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
-                        public void onSuccess(AuthResult authResult) {
-                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                            startActivity(intent);
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                FirebaseDatabase.getInstance().getReference("users")
+                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+
+                                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                        startActivity(intent);
+                                    }
+                                });
+                            }
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -75,6 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
+        }
         else{
             Toast.makeText(getApplicationContext(), "Enter Credentials Properly.", Toast.LENGTH_SHORT).show();
         }

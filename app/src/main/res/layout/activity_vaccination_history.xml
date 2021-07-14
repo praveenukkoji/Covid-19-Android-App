@@ -49,7 +49,7 @@
     <ListView
         android:id="@+id/vaccinationHistoryListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:paddingRight="16sp"
         android:paddingLeft="16sp"
         android:overScrollMode="never"

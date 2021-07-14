@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // bar chart
         barChart = findViewById(R.id.barChart);
 
+        //TODO: insert real data and chart should change acc. to chart type
         ArrayList<BarEntry> data = new ArrayList<>();
         data.add(new BarEntry(1, 1));
         data.add(new BarEntry(2, 2));
@@ -175,6 +176,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         startActivity(intent);
                         break;
                     case R.id.vaccination_certificate:
+                        //TODO: create activity
                         Toast.makeText(getApplicationContext(), "Vaccination Certificate Coming Soon.", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.prevention:
@@ -270,6 +272,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             pressedTime = System.currentTimeMillis();
         }
     }
+
     // navigation
     public void menuEvent(View view) {
 
@@ -278,5 +281,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         String emailText = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         email.setText(emailText);
         drawerLayout.openDrawer(GravityCompat.START);
+    }
+
+    //TODO: create activity
+
+    // district data event
+    public void districtDataEvent(View view) {
     }
 }

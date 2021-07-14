@@ -2,23 +2,18 @@ package com.example.covid19;
 
 public class VaccinationHistoryClass {
 
-    int injectionImage;
     String aadhaarCardNo;
+    String vaccineType;
+    String pincode;
     String registeredDate;
 
-    public VaccinationHistoryClass(int injectionImage, String aadhaarCardNo, String registeredDate) {
+    VaccinationHistoryClass() { }
 
-        this.injectionImage = injectionImage;
+    public VaccinationHistoryClass(String aadhaarCardNo, String vaccineType, String pincode, String registeredDate) {
         this.aadhaarCardNo = aadhaarCardNo;
+        this.vaccineType = vaccineType;
+        this.pincode = pincode;
         this.registeredDate = registeredDate;
-    }
-
-    public int getInjectionImage() {
-        return injectionImage;
-    }
-
-    public void setInjectionImage(int injectionImage) {
-        this.injectionImage = injectionImage;
     }
 
     public String getAadhaarCardNo() {
@@ -27,6 +22,22 @@ public class VaccinationHistoryClass {
 
     public void setAadhaarCardNo(String aadhaarCardNo) {
         this.aadhaarCardNo = aadhaarCardNo;
+    }
+
+    public String getVaccineType() {
+        return vaccineType;
+    }
+
+    public void setVaccineType(String vaccineType) {
+        this.vaccineType = vaccineType;
+    }
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
     }
 
     public String getRegisteredDate() {

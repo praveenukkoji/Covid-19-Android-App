@@ -31,12 +31,16 @@ public class VaccinationHistoryAdapterClass extends ArrayAdapter<VaccinationHist
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
 
         convertView = layoutInflater.inflate(mResource, parent, false);
-        ImageView injection = convertView.findViewById(R.id.injectionImageView);
+        ImageView injectionImageView = convertView.findViewById(R.id.injectionImageView);
         TextView aadhaarCardNo = convertView.findViewById(R.id.aadhaarCardNoTextView);
+        TextView vaccineType = convertView.findViewById(R.id.vaccineTypeTextView);
+        TextView pincode = convertView.findViewById(R.id.pincodeTextView);
         TextView registeredDate = convertView.findViewById(R.id.registeredDateTextView);
 
-        injection.setImageResource(getItem(position).getInjectionImage());
+        injectionImageView.setImageResource(R.drawable.vaccination_history_injection);
         aadhaarCardNo.setText(getItem(position).getAadhaarCardNo());
+        vaccineType.setText(getItem(position).getVaccineType());
+        pincode.setText(getItem(position).getPincode());
         registeredDate.setText(getItem(position).getRegisteredDate());
 
         return convertView;

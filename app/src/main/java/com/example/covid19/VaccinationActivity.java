@@ -8,9 +8,20 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class VaccinationActivity extends AppCompatActivity {
 
     EditText aadhaarNoEditText;
+
+    // vaccine
+    VaccinationHistoryClass vaccine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +35,27 @@ public class VaccinationActivity extends AppCompatActivity {
     // register event
     public void registerVaccinationEvent(View view) {
 
-        String number = aadhaarNoEditText.getText().toString();
-        if(number.length() < 12)
+        String addhaarNumber = aadhaarNoEditText.getText().toString();
+        //TODO: take input from user
+        String vaccineType = "COVAXIN";
+        String pincode = "590118";
+
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
+        String registeredDate = df.format(c);
+
+        if (addhaarNumber.length() < 12)
             // invalid Toast
             Toast.makeText(getApplicationContext(), "Enter a valid aadhaar number.", Toast.LENGTH_SHORT).show();
-        else
+        else {
             // successful register
+            vaccine = new VaccinationHistoryClass(addhaarNumber, vaccineType, pincode, registeredDate);
+
+            FirebaseDatabase.getInstance().getReference("vaccinations")
+                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .push().setValue(vaccine);
             Toast.makeText(getApplicationContext(), "Registered Successfully.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     // history event
