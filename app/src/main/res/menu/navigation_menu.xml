@@ -11,7 +11,7 @@
     <item
         android:id="@+id/vaccination_history"
         android:icon="@drawable/history"
-        android:title="Vaccination history"/>
+        android:title="Vaccination History"/>
     <item
         android:id="@+id/vaccination_certificate"
         android:icon="@drawable/certificate"

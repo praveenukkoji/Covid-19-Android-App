@@ -25,7 +25,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 // bar chart
 import com.github.mikephil.charting.charts.BarChart;
@@ -176,8 +175,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         startActivity(intent);
                         break;
                     case R.id.vaccination_certificate:
-                        //TODO: create activity
-                        Toast.makeText(getApplicationContext(), "Vaccination Certificate Coming Soon.", Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getApplicationContext(), VaccinationCertificateActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.prevention:
                         intent = new Intent(getApplicationContext(), PreventionActivity.class);
@@ -283,9 +282,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
-    //TODO: create activity
+    //TODO: create district data activity
 
     // district data event
     public void districtDataEvent(View view) {
+
+        Toast.makeText(getApplicationContext(), "Coming Soon.", Toast.LENGTH_SHORT).show();
     }
 }

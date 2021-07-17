@@ -21,7 +21,7 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="500sp"
+                android:layout_height="300sp"
                 android:src="@drawable/wear_mask"
                 android:scaleType="fitCenter"
                 android:layout_marginBottom="16sp"/>

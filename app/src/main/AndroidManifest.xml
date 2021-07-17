@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/app_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19">
-        <activity 
+        <activity
+            android:name=".VaccinationCertificateActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".VaccinationCenterActivity"
             android:screenOrientation="portrait" />
         <activity
