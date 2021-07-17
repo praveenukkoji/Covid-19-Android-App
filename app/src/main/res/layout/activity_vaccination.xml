@@ -99,11 +99,36 @@
             android:textStyle="bold"
             android:textColor="@color/black"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Aadhaar Card no."
-            android:layout_marginBottom="16sp"/>
+            android:orientation="horizontal"
+            android:layout_marginBottom="8sp"
+            android:background="@drawable/edit_text_background"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/vaccineTypeSpinner"
+                android:textAlignment="center"
+                android:padding="8sp"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/pincodeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:background="@drawable/edit_text_background"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="6"
+            android:hint="Pincode"
+            android:padding="16sp"
+            android:textSize="14sp"
+            android:layout_marginBottom="8sp"/>
 
         <EditText
             android:id="@+id/aadhaarNoEditText"

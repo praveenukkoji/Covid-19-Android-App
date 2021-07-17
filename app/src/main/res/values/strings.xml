@@ -48,4 +48,10 @@
         <item>Deaths</item>
         <item>Recovered</item>
     </string-array>
+
+    <string-array name="vaccineType">
+        <item>CoviShield</item>
+        <item>Covaxin</item>
+        <item>Sputnik V</item>
+    </string-array>
 </resources>
