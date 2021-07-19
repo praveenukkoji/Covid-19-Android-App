@@ -35,7 +35,7 @@
                 android:gravity="center"
                 android:text="Prevention"
                 android:textColor="@color/white"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
