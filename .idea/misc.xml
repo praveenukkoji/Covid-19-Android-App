@@ -5,10 +5,11 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3072916666666667" />
         <entry key="app/src/main/res/layout/activity_prevention_card.xml" value="0.22135416666666666" />
-        <entry key="app/src/main/res/layout/activity_state.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/activity_state.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_state_detail.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/activity_vaccination.xml" value="0.3234375" />
         <entry key="app/src/main/res/layout/district_view.xml" value="0.253125" />
-        <entry key="app/src/main/res/layout/state_view.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/state_view.xml" value="0.2714599637340139" />
       </map>
     </option>
   </component>

@@ -3,6 +3,7 @@ package com.example.covid19;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -132,5 +133,9 @@ public class StateDetail extends AppCompatActivity {
         });
 
         requestQueue.add(jsonObjectRequest);
+    }
+
+    public void backBtn(View view) {
+        onBackPressed();
     }
 }

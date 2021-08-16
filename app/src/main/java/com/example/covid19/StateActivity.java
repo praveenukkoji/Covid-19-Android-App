@@ -91,4 +91,8 @@ public class StateActivity extends AppCompatActivity {
 
         requestQueue.add(jsonObjectRequest);
     }
+
+    public void backBtn(View view) {
+        onBackPressed();
+    }
 }

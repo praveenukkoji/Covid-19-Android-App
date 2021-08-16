@@ -81,6 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="State Data"
+                    android:textStyle="bold"
                     android:onClick="stateDataEvent"
                     android:textColor="@color/black"
                     style="?android:attr/borderlessButtonStyle"
