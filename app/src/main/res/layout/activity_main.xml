@@ -62,73 +62,29 @@
             android:background="@drawable/white_curve_background"
             android:padding="16sp">
 
-            <LinearLayout
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="16sp"
-                android:background="@drawable/edit_text_background"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true">
-
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/chartTypeSpinner"
-                    android:textAlignment="center"
-                    android:padding="8sp"/>
-
-            </LinearLayout>
-
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/barChart"
-                android:layout_width="match_parent"
-                android:layout_height="300sp"
+                android:layout_height="200sp"
                 android:layout_weight="1"
-                android:padding="16sp"
                 android:background="@drawable/custom_border"
                 android:layout_marginBottom="16sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="16sp"
-                android:padding="5sp">
+                android:layout_weight="0"
+                android:padding="5sp"
+                android:layout_marginBottom="10sp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_text_background"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:layout_weight="1">
-
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/stateSpinner"
-                        android:textAlignment="center"
-                        android:padding="8sp"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <Button
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="0"
-                    android:layout_marginLeft="16sp">
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="District Data"
-                        android:onClick="districtDataEvent"
-                        android:textColor="@color/black"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:background="@drawable/button_background_coloured"/>
-
-            </LinearLayout>
+                    android:text="State Data"
+                    android:onClick="stateDataEvent"
+                    android:textColor="@color/black"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:background="@drawable/edit_text_background"/>
 
             </LinearLayout>
 
