@@ -28,7 +28,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     // firebase
     private FirebaseAuth firebaseAuth;
-
     // user
     UserClass user;
 

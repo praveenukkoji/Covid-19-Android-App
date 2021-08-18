@@ -10,11 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19">
         <activity
+            android:name=".SplashScreenActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".StateDetail"
-            android:exported="true" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".StateActivity"
-            android:exported="true" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".VaccinationCertificateActivity"
             android:screenOrientation="portrait" />
@@ -29,13 +38,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RegisterActivity"
             android:screenOrientation="portrait" />
